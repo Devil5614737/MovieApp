@@ -1,0 +1,117 @@
+@-webkit-keyframes clip {
+  0% {
+    -webkit-clip-path: circle(0% at 10% 90%);
+            clip-path: circle(0% at 10% 90%);
+  }
+  100% {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@keyframes clip {
+  0% {
+    -webkit-clip-path: circle(0% at 10% 90%);
+            clip-path: circle(0% at 10% 90%);
+  }
+  100% {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
+}
+
+.posters {
+  margin-top: 42px;
+}
+
+.posters .posterContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 42px 42px;
+  padding: 1.2em 4%;
+}
+
+@media screen and (max-width: 900px) {
+  .posters .posterContainer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .posters .posterContainer {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .posters .posterContainer {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.posters .posterContainer .poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.posters .posterContainer .poster:hover {
+  cursor: pointer;
+}
+
+.posters .posterContainer .poster:hover .movieName {
+  opacity: 1;
+}
+
+.posters .posterContainer .poster:hover .movieName:hover {
+  text-decoration: underline;
+  -webkit-transition: .4s all ease-in-out;
+  transition: .4s all ease-in-out;
+}
+
+.posters .posterContainer .poster:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.posters .posterContainer .poster:hover::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  -webkit-animation-name: clip;
+          animation-name: clip;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  z-index: 1;
+}
+
+.posters .posterContainer .poster .movieName {
+  position: absolute;
+  top: 0;
+  color: white;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 2rem;
+  opacity: 0;
+  z-index: 100;
+  text-align: center;
+}
+/*# sourceMappingURL=home.css.map */

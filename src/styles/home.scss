@@ -1,0 +1,83 @@
+
+@keyframes clip {
+    0%{
+        clip-path: circle(0% at 10% 90%);
+    }
+    100%{
+        clip-path: circle(100% at 50% 50%);
+    }
+}
+
+.posters{
+    margin-top: 42px;
+    .posterContainer{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 42px 42px;
+        padding: 1.2em 4%;
+        @media screen and (max-width:900px) {
+            grid-template-columns: repeat(3,1fr);
+        }
+        @media screen and (max-width:600px) {
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media screen and (max-width:500px) {
+            grid-template-columns: repeat(1,1fr);
+           
+        }
+       
+        .poster{
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+
+            
+            &:hover{
+                cursor: pointer;
+                .movieName{
+                    opacity: 1;
+                    &:hover{
+                        text-decoration: underline;
+                        transition: .4s all ease-in-out;
+                    }
+                }
+                img{
+                    transform: scale(1.5);
+                    transition: all .4s ease-in-out;
+                    object-fit: cover;
+                   
+                }
+                &::before{
+                    content:"";
+                    position: absolute;
+                    background:rgba(0,0,0,.7) ;
+                    width: 100%;
+                    height: 100%;
+                    animation-name: clip;
+                    animation-iteration-count: 1;
+                    animation-duration: .4s;
+                    transition: all .1s ease-in-out;
+                    z-index: 1;
+                }
+            }
+            img{
+              
+            }
+            .movieName{
+                position: absolute;
+                top: 0;
+                color: white;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                font-weight: bold;
+                font-size: 2rem;
+                opacity: 0;
+                z-index: 100;
+                text-align: center;
+            
+            }
+        }
+    }
+}
+

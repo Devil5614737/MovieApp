@@ -1,0 +1,112 @@
+.movieInfo .movieInfoContainer {
+  padding: 2em 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.movieInfo .movieInfoContainer .movieThumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 500px;
+}
+
+@media screen and (max-width: 807px) {
+  .movieInfo .movieInfoContainer .movieThumbnail img {
+    max-height: 450px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .movieInfo .movieInfoContainer .movieThumbnail img {
+    max-height: 300px;
+  }
+}
+
+.movieInfo .movieInfoContainer .movieDetails {
+  margin-top: 12px;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieName {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 807px) {
+  .movieInfo .movieInfoContainer .movieDetails .movieName {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .movieInfo .movieInfoContainer .movieDetails .movieName {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .movieInfo .movieInfoContainer .movieDetails .movieName {
+    font-size: 2rem;
+  }
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieName::-moz-selection {
+  background-color: blue;
+  color: white;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieName::selection {
+  background-color: blue;
+  color: white;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieStats p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieStats p::-moz-selection {
+  background-color: blue;
+  color: white;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieStats p::selection {
+  background-color: blue;
+  color: white;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieAbout {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 807px) {
+  .movieInfo .movieInfoContainer .movieDetails .movieAbout {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 807px) {
+  .movieInfo .movieInfoContainer .movieDetails .movieAbout {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieAbout::-moz-selection {
+  background-color: #f60f82;
+  color: white;
+}
+
+.movieInfo .movieInfoContainer .movieDetails .movieAbout::selection {
+  background-color: #f60f82;
+  color: white;
+}
+/*# sourceMappingURL=movieinfo.css.map */
