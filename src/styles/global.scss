@@ -48,4 +48,12 @@ body.active{
     .movieAbout{
         color: #5f5f5f;
     }
+    .search{
+        color: white;
+    }
+    .searchInput.active{
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
 }

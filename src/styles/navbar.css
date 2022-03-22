@@ -105,4 +105,39 @@
 .link.active {
   border-bottom: 4px solid blue;
 }
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.search P {
+  margin-left: 22px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.searchInput {
+  width: 0%;
+  margin-left: 12px;
+  height: 25px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 .3em;
+  display: none;
+  -webkit-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
+
+.searchInput.active {
+  width: 100%;
+  display: block;
+  -webkit-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
 /*# sourceMappingURL=navbar.css.map */

@@ -1,12 +1,10 @@
 import "../styles/navbar.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-
-
-// import {ThemeContext} from "../Context/ThemeContext";
+import { useContext, useEffect } from "react";
+import { Context } from "../Context/ThemeContext";
 
 export const Navbar = () => {
-  // const{setDarkMode,darkMode}=useContext(ThemeContext);
+const{setSearchTerm}=useContext(Context)
 
   // active link
   useEffect(() => {
@@ -33,10 +31,18 @@ export const Navbar = () => {
     darkThemeToggler();
   }, []);
 
+  // search feature
+  useEffect(() => {
+    const searchTrigger = () => {
+      const searchBtn = document.querySelector(".searchBtn");
+      const searchInput = document.querySelector(".searchInput");
 
-
-
-
+      searchBtn.addEventListener("click", () => {
+        searchInput.classList.toggle("active");
+      });
+    };
+    searchTrigger();
+  },[]);
 
   return (
     <div className="navbar">
@@ -55,12 +61,15 @@ export const Navbar = () => {
           <Link to="/actions">
             <p className="link">Actions</p>
           </Link>
+          <div className="search">
+            <p className="searchBtn">Search</p>
+            <input className="searchInput" type="text" placeholder="search by name" onChange={(e)=>setSearchTerm(e.target.value)}/>
+          </div>
         </div>
         <div className="right">
           <p id="darkBtn" className="darkBtn">
             DarkMode
           </p>
-         
         </div>
         {/* <div className="hamburgerMenu">
           <div className="line"></div>

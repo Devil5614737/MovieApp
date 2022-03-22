@@ -9,39 +9,46 @@ function MovieInfo() {
 
   const imageLink = "https://image.tmdb.org/t/p/original";
 
-  // /nMKdUUepR0i5zn0y1T4CsSB5chy.jpg
   if (movieData.length === 0) {
     window.location = "/";
   }
 
+
+  let t1=gsap.timeline()
   //
   useEffect(() => {
-    gsap.from(".movieThumbnail", {
+    t1.from(".movieThumbnail", {
       opacity: 0,
       stagger: 0.4,
       scale: 0.1,
       y: 12,
       //  transition:.1
     });
-    gsap.from(".movieName", {
+    t1.from(".movieName", {
       opacity: 0,
       stagger: 0.4,
       y: 12,
       scale: 0.1,
+      dealy:.5,
       //  transition:.1
     });
-    gsap.from(".movieStats", {
+    t1.from(".movieStats", {
       opacity: 0,
       stagger: 0.7,
       x: 12,
+      dealy:.7,
       //  transition:.1
     });
-    gsap.from(".movieAbout", {
+    t1.from(".movieAbout", {
       opacity: 0,
       stagger: 0.5,
       y: -12,
       scale: 3,
+      dealy:.9,
+
     });
+    
+  
   }, []);
   return (
     <>

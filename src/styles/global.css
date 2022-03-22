@@ -52,4 +52,14 @@ body.active .movieStats p {
 body.active .movieAbout {
   color: #5f5f5f;
 }
+
+body.active .search {
+  color: white;
+}
+
+body.active .searchInput.active {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
 /*# sourceMappingURL=global.css.map */

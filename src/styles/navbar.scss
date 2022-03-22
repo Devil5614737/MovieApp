@@ -119,3 +119,36 @@
     //     }
     // }
 
+
+
+
+    .search{
+        display:flex;
+        align-items: center;
+        cursor: pointer;
+       
+        P{
+            margin-left: 22px;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+        input{
+        }
+    }
+
+.searchInput{
+    width: 0%;
+    margin-left: 12px;
+    height: 25px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding:0 .3em ;
+    display: none;
+    transition: width .4s ease-in-out;
+   
+}
+.searchInput.active{
+    width: 100%;
+    display: block;
+    transition: width .4s ease-in-out;
+}
