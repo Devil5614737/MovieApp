@@ -8,7 +8,7 @@ import "../styles/home.css";
 const imageLink = "https://image.tmdb.org/t/p/original";
 
 function Home() {
-  const { searchResults, handleMovieData } = useContext(Context);
+  const {setSearchResults, searchResults, handleMovieData } = useContext(Context);
 const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
@@ -40,13 +40,23 @@ const [isLoading, setIsLoading] = useState(true);
     });
   }, []);
 
+const handleReset=()=>{
+setSearchResults()
+}
+
   return (
     <>
       <Navbar />
       {isLoading ? (
         <LoadingSpinner />
-      ) : (
-        <div className="posters">
+        ) : (
+          <div className="posters">
+            {searchResults&&<div className="resetBtnContainer">
+               <button onClick={handleReset}>clear</button>
+            </div>}
+            
+           
+            
           <div className="posterContainer">
             {searchResults
               ? searchResults.map((movie) => (

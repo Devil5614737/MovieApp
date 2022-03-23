@@ -11,7 +11,8 @@ const t1=gsap.timeline()
 
 function Popular() {
   const [movies, setMovies] = useState([]);
-  const { searchResults, handleMovieData } = useContext(Context);
+    
+  const { searchResults, handleMovieData,setSearchResults } = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch(
@@ -36,7 +37,9 @@ function Popular() {
     });
   }, []);
 
-
+  const handleReset=()=>{
+    setSearchResults()
+    }
   return (
     <>
       <Navbar />
@@ -44,6 +47,9 @@ function Popular() {
         <LoadingSpinner />
       ) : (
         <div className="posters">
+           {searchResults&&<div className="resetBtnContainer">
+               <button onClick={handleReset}>clear</button>
+            </div>}
           <div className="posterContainer">
             {searchResults
               ? searchResults.map((movie) => (

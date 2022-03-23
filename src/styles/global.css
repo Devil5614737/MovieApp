@@ -62,4 +62,13 @@ body.active .searchInput.active {
   color: white;
   border: 1px solid white;
 }
+
+body.active .resetBtnContainer button {
+  background-color: black;
+  color: white;
+}
+
+body.active .hamburger {
+  background-color: white;
+}
 /*# sourceMappingURL=global.css.map */

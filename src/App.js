@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Context.Provider
-      value={{ movieData, setMovieData, handleMovieData, setSearchTerm ,searchResults}}
+      value={{ movieData, setMovieData, handleMovieData, setSearchTerm ,searchResults,setSearchResults}}
     >
       <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
         <Routes>

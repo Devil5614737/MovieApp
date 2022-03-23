@@ -13,7 +13,7 @@ const t1=gsap.timeline();
 gsap.registerPlugin("scrollTrigger")
 
 function Trendings() {
-  const {searchResults,handleMovieData}=useContext(Context);
+  const {searchResults,handleMovieData,setSearchResults}=useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
   const[movies,setMovies]=useState([])
 useEffect(()=>{
@@ -33,6 +33,11 @@ useEffect(() => {
   });
 }, []);
 
+
+const handleReset=()=>{
+  setSearchResults()
+  }
+  
 return (
     <>
       <Navbar />
@@ -40,6 +45,9 @@ return (
         <LoadingSpinner />
       ) : (
         <div className="posters">
+           {searchResults&&<div className="resetBtnContainer">
+               <button onClick={handleReset}>clear</button>
+            </div>}
           <div className="posterContainer">
             {searchResults
               ? searchResults.map((movie) => (
