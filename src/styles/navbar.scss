@@ -55,10 +55,7 @@
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                                 background-clip: text;
-                                animation-name: logo;
-                                animation-iteration-count: infinite;
-                                animation-duration: .4s ;
-                              transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                              cursor: pointer;
                              
                       
             }

@@ -69,14 +69,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  -webkit-animation-name: logo;
-          animation-name: logo;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
 }
 
 .navbar .navbarContainer .leftContent .linksContainer {
