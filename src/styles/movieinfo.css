@@ -1,4 +1,5 @@
 .movieInfo .movieInfoContainer {
+  width: 100%;
   padding: 2em 4%;
   display: -webkit-box;
   display: -ms-flexbox;
