@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { Context } from "../Context/ThemeContext";
 
 export const Navbar = () => {
-  const { setSearchTerm } = useContext(Context);
+  const {searchTerm, setSearchTerm } = useContext(Context);
 
 
   const darkThemeToggler = () => {
@@ -52,6 +52,26 @@ export const Navbar = () => {
     }
     togglingNavbar();
   }, []);
+
+
+  const handleSearch=e=>{
+    
+    setSearchTerm(e.target.value)
+    
+  }
+
+
+  function debounce( callback, delay ) {
+    let timeout;
+    return function() {
+        clearTimeout( timeout );
+        timeout = setTimeout( callback, delay );
+    }
+}
+
+debounce(handleSearch,2000)
+
+
 
   return (
     <div className="navbar">
@@ -114,7 +134,7 @@ export const Navbar = () => {
             className="searchInput"
             type="text"
             placeholder="search by name"
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleSearch}
           />
         </div>
         <p id="darkBtn2" className="darkBtn">

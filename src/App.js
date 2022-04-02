@@ -28,6 +28,7 @@ function App() {
         `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=2edf9f02e088272f6ff2eab6bf5fa21a&with_genres=10749`
       )
         .then((res) => res.json())
+      
         .then((data) => setSearchResults(data.results))
         .catch((e) => console.log(e));
     }
@@ -36,7 +37,7 @@ function App() {
 
   return (
     <Context.Provider
-      value={{ movieData, setMovieData, handleMovieData, setSearchTerm ,searchResults,setSearchResults}}
+      value={{ movieData, setMovieData, handleMovieData, setSearchTerm ,searchResults,setSearchResults,searchTerm}}
     >
       <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
         <Routes>
